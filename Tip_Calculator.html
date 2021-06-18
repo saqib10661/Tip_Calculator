@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+	<title>Tip Calculator</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href=calculator.png>
+</head>
+<body>
+	<div id="container">
+		<header id="header">Tip Calculator</header>
+
+		<form>
+			<p>Enter how much you paid</p>
+			<input id="amount" placeholder="Amount in £'s">
+		</form>
+
+		<p>How much tip do you want to give?</p>
+		<select id="howmuch">
+			<option>--Choose--</option>
+			<option value="10">10%</option>
+			<option value="20">20%</option>
+			<option value="30">30%</option>
+			<option value="40">40%</option>
+			<option value="50">50%</option>
+		</select>
+
+		<h2 id="tip">£0.00</h2>
+
+		<button id="calculate" onclick="calculateTip()">Calculate</button>
+		<button id="clear" onclick="clean()">Clear</button>
+	</div>
+	<script type="text/javascript" src="Calculate.js"></script>
+	<script type="text/javascript">
+		//clean all fields
+		function clean(){
+			document.getElementById("howmuch").selectedIndex = "0";
+			document.getElementById("tip").innerHTML = "£0.00";
+			document.getElementById("amount").value = "";
+		}
+	</script>
+</body>
